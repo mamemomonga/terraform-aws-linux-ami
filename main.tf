@@ -2,8 +2,9 @@
  * Usage:
  *
  * ```hcl
- * module amis {
- *   source = "mamemomonga/aws-linux-ami"
+ * module "linux-ami" {
+ *   source  = "mamemomonga/linux-ami/aws"
+ *   version = "0.0.1"
  * }
  * output amis {
  *   value = module.amis
