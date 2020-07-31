@@ -1,4 +1,7 @@
-# Favorite Linux AMIs for terraform  
+# Favorite Linux AMIs for terraform
+
+Get the latest public AMI for the OS
+
 Usage:
 
 ```hcl
