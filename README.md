@@ -5,24 +5,24 @@ Get the latest public AMI for the OS
 Usage:
 
 ```hcl
-module linux-ami {
+module amis {
   source  = "mamemomonga/linux-ami/aws"
 }
 
-output ami-debian {
-  value = module.linux-ami.debian10.amd64
-}
-
-output ami-ubuntu {
-  value = module.linux-ami.ubuntu2004.amd64
-}
-
-output ami-amazon {
-  value = module.linux-ami.amazonlinux2.amd64
-}
-
 output amis {
-  value = module.linux-ami
+  value = module.amis
+}
+
+output ami_debian {
+  value = module.amis.debian.10.amd64
+}
+
+output ami_ubuntu {
+  value = module.amis.ubuntu.2004.amd64
+}
+
+output ami_amazonlinux {
+  value = module.amis.amazonlinux.2.amd64
 }
 ```
 
@@ -30,21 +30,27 @@ Output Example
 ```
 Outputs:
 
-ami-amazon = ami-0cc75a8978fbbc969
-ami-debian = ami-025e5dec754f6ddbd
-ami-ubuntu = ami-0461b11e2fad8c14a
+ami_amazonlinux = ami-0cc75a8978fbbc969
+ami_debian = ami-025e5dec754f6ddbd
+ami_ubuntu = ami-0461b11e2fad8c14a
 amis = {
-  "amazonlinux2" = {
-    "amd64" = "ami-0cc75a8978fbbc969"
-    "arm64" = "ami-03bbf9057affc0643"
+  "amazonlinux" = {
+    "2" = {
+      "amd64" = "ami-0cc75a8978fbbc969"
+      "arm64" = "ami-03bbf9057affc0643"
+    }
   }
-  "debian10" = {
-    "amd64" = "ami-025e5dec754f6ddbd"
-    "arm64" = "ami-0e356e69792556098"
+  "debian" = {
+    "10" = {
+      "amd64" = "ami-025e5dec754f6ddbd"
+      "arm64" = "ami-0e356e69792556098"
+    }
   }
-  "ubuntu2004" = {
-    "amd64" = "ami-0461b11e2fad8c14a"
-    "arm64" = "ami-05491233371f51af2"
+  "ubuntu" = {
+    "2004" = {
+      "amd64" = "ami-0461b11e2fad8c14a"
+      "arm64" = "ami-05491233371f51af2"
+    }
   }
 }
 ```
