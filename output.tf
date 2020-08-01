@@ -10,7 +10,7 @@ output debian {
 output ubuntu {
   description = "ubuntu"
   value = {
-    "20.04" = {
+    "2004" = {
       amd64 = data.aws_ami.ubuntu2004-amd64.id
       arm64 = data.aws_ami.ubuntu2004-arm64.id
     }
